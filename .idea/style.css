@@ -1,0 +1,63 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #000; /* o #0b0b0f */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: system-ui, sans-serif;
+    color: #d4af37; /* dorado */
+}
+
+.loader-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.loader-logo {
+    width: 140px;
+    height: auto;
+
+    /* Animación principal */
+    animation:
+            rotate 6s linear infinite,
+            pulse 2.5s ease-in-out infinite;
+
+    filter: drop-shadow(0 0 12px rgba(212, 175, 55, 0.4));
+}
+
+.loader-container p {
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+
+/* Rotación lenta */
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Pulso sutil */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.95;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 1;
+    }
+}
