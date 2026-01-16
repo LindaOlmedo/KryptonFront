@@ -1,0 +1,176 @@
+main {
+    min-height: 100vh;
+}
+
+.sidebar {
+    background: #020617;
+    border-right: 1px solid var(--k-border);
+    height: 100vh;
+}
+
+.sidebar-logo {
+    width: 120px;
+    height: auto;
+    margin-bottom: 2rem;
+
+    filter: drop-shadow(0 0 10px rgba(245,199,122,.35));
+}
+
+.text-gold {
+    color: var(--gold);
+}
+
+/* HEADER */
+.dashboard-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: .5rem 0;
+    margin-bottom: 1.5rem;
+    background: inherit;
+}
+
+/* BOTÓN DE TEMA */
+.theme-toggle {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid var(--k-border);
+    background: var(--k-card);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.theme-toggle:hover {
+    transform: translateY(-2px) rotate(6deg);
+}
+
+.theme-toggle span {
+    position: absolute;
+    font-size: 18px;
+    transition: all .3s ease;
+}
+
+body.dark .icon-sun {
+    opacity: 0;
+    transform: scale(.5) rotate(-90deg);
+}
+
+body.dark .icon-moon {
+    opacity: 1;
+}
+
+body.light .icon-moon {
+    opacity: 0;
+    transform: scale(.5) rotate(90deg);
+}
+
+body.light .icon-sun {
+    opacity: 1;
+}
+
+/* CARDS */
+.card {
+    background: linear-gradient(145deg, #0f172a, #020617);
+    border: 1px solid var(--k-border);
+    border-radius: 16px;
+    transition: transform .3s ease;
+}
+
+.card {
+    background: linear-gradient(145deg, #0f172a, #020617);
+    border: 1px solid var(--k-border);
+    border-radius: 16px;
+
+    color: var(--text-dark);
+}
+.card small {
+    color: rgba(255,255,255,.65);
+    letter-spacing: .5px;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+}
+
+.card,
+.card * {
+    color: #e5e7eb !important;
+}
+
+.card {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Glow dorado */
+.card::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+
+    background: radial-gradient(
+            circle at top left,
+            rgba(245,199,122,.25),
+            transparent 60%
+    );
+
+    opacity: .6;
+    pointer-events: none;
+}
+
+/* Destello sutil animado */
+.card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+            120deg,
+            transparent,
+            rgba(245,199,122,.15),
+            transparent
+    );
+
+    transform: translateX(-100%);
+    animation: shimmer 6s infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    50% { transform: translateX(100%); }
+    100% { transform: translateX(100%); }
+}
+.card h4 {
+    color: #f8fafc;
+}
+
+.card small {
+    color: rgba(255,255,255,.65);
+}
+
+.sidebar-title {
+    margin-top: 10px;
+
+    font-size: 14px;
+    letter-spacing: 4px;
+    font-weight: 600;
+
+    color: #f5c77a;
+    text-transform: uppercase;
+
+    text-shadow:
+            0 0 8px rgba(245,199,122,.35),
+            0 0 18px rgba(245,199,122,.15);
+}
+
+
+
+
+
