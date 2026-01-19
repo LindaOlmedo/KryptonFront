@@ -11,3 +11,4 @@ toggleBtn.addEventListener('click', () => {
     const theme = body.classList.contains('light') ? 'light' : 'dark';
     localStorage.setItem('theme', theme);
 });
+
